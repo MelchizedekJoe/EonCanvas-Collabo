@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Support - EonCanvas</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            display: flex;
+            margin-top: 50px;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 200px;
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-right: 2px solid #ddd;
+        }
+
+        .sidebar h2 {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 15px;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #007BFF;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .sidebar ul li a:hover {
+            color: #0056b3;
+        }
+
+        .logo-img {
+            max-width: 100px;
+            margin-bottom: 20px;
+        }
+
+        /* Contact Form Section */
+        .contact-section {
+            flex: 1;
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        /* Form Styles */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .submit-button {
+            background-color: #007BFF;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer and Copyright */
+        .copyright {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+        }
+
+        footer p {
+            color: #777;
+        }
+
+        #success-message {
+            font-size: 16px;
+            color: green;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Section -->
+        <aside class="sidebar">
+            <a href="https://siliconbrighton.com/" target="_blank">
+                <img src="./Images/R.jpeg" alt="EonCanvas Logo" class="logo-img">
+            </a>
+            <h2>Quick Links</h2>
+            <ul>
+                <li><a href="dashboard.html">Login</a></li>
+                <li><a href="dashboard.html">Sign Up</a></li>
+                <li><a href="contact-support.html">Contact Support</a></li>
+            </ul>
+        </aside>
+
+        <!-- Contact Support Section -->
+        <section class="contact-section">
+            <h1>Contact Support</h1>
+            <p>If you have any questions, issues, or need assistance, please fill out the form below and our support team will get back to you as soon as possible.</p>
+
+            <!-- Form for Contact Support -->
+            <form class="contact-form" id="contact-form" onsubmit="submitContactForm(event)">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" placeholder="Enter the subject" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Enter your message here" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-button">Submit</button>
+            </form>
+
+            <!-- Success Message to be shown after form submission -->
+            <div id="success-message" style="display: none;">
+                <p>Thank you, <strong id="user-name"></strong>! Your message has been sent successfully. Our support team will reach out to you shortly.</p>
+            </div>
+
+            <!-- Copyright Section -->
+            <div class="copyright">
+                <p>&copy; 2024 EonCanvas. All rights reserved.</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Function to handle form submission and display success message
+        function submitContactForm(event) {
+            event.preventDefault();  // Prevent the default form submission
+
+            // Get the user's name from the form
+            const userName = document.getElementById('name').value;
+
+            // Hide the form and display the success message
+            document.getElementById('contact-form').style.display = 'none';
+            document.getElementById('user-name').textContent = userName;
+            document.getElementById('success-message').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>

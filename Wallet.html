@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Wallet</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+        .logo-img {
+            max-width: 50px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .wallet-container {
+            margin-top: 30px;
+        }
+
+        .wallet-header {
+            text-align: center;
+            color: #333;
+        }
+
+        .wallet-section {
+            padding: 16px;
+            background-color: #f1f1f1;
+            margin-bottom: 16px;
+            border-radius: 8px;
+        }
+
+        .points-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .points-box {
+            padding: 16px;
+            text-align: center;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 48%;
+            position: relative;
+        }
+
+        .points-icon {
+            font-size: 40px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .wallet-footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .exchange-btn {
+            margin-top: 16px;
+        }
+
+        /* Additional Styling for Icons */
+        .fa-trophy {
+            color: #fbc02d;
+        }
+
+        .fa-users {
+            color: #03a9f4;
+        }
+
+        .fa-gift {
+            color: #4caf50;
+        }
+
+        .fa-credit-card {
+            color: #ff9800;
+        }
+    </style>
+</head>
+<body class="w3-light-grey">
+
+<!-- Top container with EonCanvas Logo -->
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+    <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+    <!-- EonCanvas Logo -->
+    <span class="w3-bar-item">
+        <img src="./Images/R.jpeg" alt="EonCanvas Logo" class="logo-img">
+        EonCanvas Collaboration Platform
+    </span>
+</div>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container">
+    <h5>Dashboard</h5>
+  </div>
+  <div class="w3-bar-block">
+    <a href="dashboard.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-lightbulb-o fa-fw"></i>  New Ideas</a>
+    <a href="idea.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-handshake-o fa-fw"></i>  Collaborations</a>
+    <a href="stage.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-trophy fa-fw"></i>  Challenges</a>
+    <a href="profile.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw"></i>  Profile</a>
+    <a href="setting.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Settings</a>
+    <a href="wallet.html" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-money fa-fw"></i>  Prize Wallet</a><br><br>
+  </div>
+</nav>
+
+<!-- Page Content -->
+<div class="w3-main" style="margin-left:300px; margin-top:50px;">
+
+    <!-- Wallet Overview -->
+    <div class="w3-container wallet-container">
+        <div class="w3-card-4 wallet-section">
+            <h2 class="wallet-header">My Wallet</h2>
+            <div class="points-section">
+                <div class="points-box">
+                    <i class="fa fa-trophy points-icon"></i>
+                    <h4>Idea Submission Points</h4>
+                    <p><b>45,600 PT</b></p>
+                </div>
+                <div class="points-box">
+                    <i class="fa fa-users points-icon"></i>
+                    <h4>Community Credits</h4>
+                    <p><b>12,345 PT</b></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wallet Actions -->
+    <div class="w3-container wallet-container">
+        <div class="w3-card-4 wallet-section">
+            <h3>Redeem Your Points</h3>
+            <p>Exchange your accumulated points for gift cards, products, or convert them to social credits for community contributions.</p>
+
+            <!-- Redeem Options -->
+            <div class="w3-row-padding">
+                <div class="w3-half w3-padding">
+                    <button class="w3-button w3-green w3-block w3-round">
+                        <i class="fa fa-gift"></i> Redeem for Gift Cards
+                    </button>
+                </div>
+                <div class="w3-half w3-padding">
+                    <button class="w3-button w3-blue w3-block w3-round">
+                        <i class="fa fa-credit-card"></i> Convert to Social Credits
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Point Exchange Section -->
+    <div class="w3-container wallet-container">
+        <div class="w3-card-4 wallet-section">
+            <h3>Exchange Points</h3>
+            <p>You can exchange points between your wallets to maximize your rewards. For example, you can move points from your submission wallet to your investment wallet.</p>
+
+            <div class="points-section">
+                <div class="points-box">
+                    <i class="fa fa-gift points-icon"></i>
+                    <h4>Prize Wallet</h4>
+                    <p><b>84,935 PT</b></p>
+                </div>
+                <div class="points-box">
+                    <i class="fa fa-credit-card points-icon"></i>
+                    <h4>Investment Wallet</h4>
+                    <p><b>15,215 PT</b></p>
+                </div>
+            </div>
+            <button class="w3-button w3-red w3-block w3-margin-top w3-round exchange-btn">Exchange Points Between Wallets</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-16 w3-light-grey wallet-footer">
+        <p>Powered by Silicon Brighton Collaboration Platform</p>
+    </footer>
+
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+    } else {
+        mySidebar.style.display = 'block';
+    }
+}
+
+// Close the sidebar
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Idea Submission Status</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+
+        .status-container {
+            margin-top: 20px;
+            padding: 20px;
+        }
+
+        .status-step {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            cursor: pointer;
+        }
+
+        .status-step span {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .status-indicator {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-block;
+            text-align: center;
+            line-height: 30px;
+            font-size: 16px;
+        }
+
+        .status-submitted {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        .status-pending {
+            background-color: #ff9800;
+            color: white;
+        }
+
+        .status-completed {
+            background-color: #2196f3;
+            color: white;
+        }
+
+        .sub-status {
+            padding: 10px 20px;
+            background-color: #f1f1f1;
+            border-left: 4px solid #ccc;
+            display: none; /* Hidden by default */
+        }
+
+        .show {
+            display: block !important;
+        }
+
+        /* Add icon beside each collapsible item */
+        .status-step i {
+            margin-left: 10px;
+        }
+
+        /* Committee List Style */
+        .committee-list {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        .committee-list li {
+            padding: 5px 0;
+        }
+
+        /* Sidebar Style */
+        .logo-img {
+            max-width: 50px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        /* Slide-in animation for the footer */
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .animated-footer {
+            display: inline-block;
+            animation: slideIn 3s ease-in-out forwards;
+            font-weight: bold;
+            color: #333;
+            font-size: 18px;
+        }
+    </style>
+    <script>
+        // Function to toggle the sub-status sections
+        function toggleStatus(id) {
+            var element = document.getElementById(id);
+            if (element.classList.contains('show')) {
+                element.classList.remove('show');
+            } else {
+                element.classList.add('show');
+            }
+        }
+    </script>
+</head>
+<body class="w3-light-grey">
+
+<!-- Top container with EonCanvas Logo -->
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i> Menu</button>
+  <!-- EonCanvas Logo -->
+  <span class="w3-bar-item">
+    <img src="./Images/R.jpeg" alt="EonCanvas Logo" class="logo-img">
+    EonCanvas Collaboration Platform
+  </span>
+</div>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container">
+    <h5>Dashboard</h5>
+  </div>
+  <div class="w3-bar-block">
+    <a href="dashboard.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-lightbulb-o fa-fw"></i>  New Ideas</a>
+    <a href="idea.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-handshake-o fa-fw"></i>  Collaborations</a>
+    <a href="stage.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-trophy fa-fw"></i>  Challenges</a>
+    <a href="profile.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw"></i>  Profile</a>
+    <a href="setting.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Settings</a>
+    <a href="wallet.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-money fa-fw"></i>  Prize Wallet</a><br><br>
+  </div>
+</nav>
+
+<!-- PAGE CONTENT -->
+<div class="w3-main" style="margin-left:300px;margin-top:43px; padding: 20px;">
+  
+  <!-- Header -->
+  <header class="w3-container">
+    <h5><b><i class="fa fa-dashboard"></i> Idea Stage Status</b></h5>
+  </header>
+
+  <!-- Status Tracker -->
+  <div class="w3-container status-container">
+
+    <!-- Idea Submission -->
+    <div class="status-step" onclick="toggleStatus('idea-submission')">
+      <span>1. Idea Submission</span>
+      <i class="fa fa-chevron-down"></i>
+    </div>
+    <div id="idea-submission" class="sub-status">
+        <p><b>Submitted</b></p>
+        <p>Validated</p>
+        <p>To Adjust</p>
+        <p>Not Validated</p>
+    </div>
+
+    <!-- Crowd Evaluation -->
+    <div class="status-step" onclick="toggleStatus('crowd-evaluation')">
+      <span>2. Crowd Evaluation</span>
+      <i class="fa fa-chevron-down"></i>
+    </div>
+    <div id="crowd-evaluation" class="sub-status">
+        <p><b>Collaborative Evaluation</b></p>
+        <p>Approved</p>
+    </div>
+
+    <!-- Idea Selection -->
+    <div class="status-step" onclick="toggleStatus('idea-selection')">
+      <span>3. Idea Selection</span>
+      <i class="fa fa-chevron-down"></i>
+    </div>
+    <div id="idea-selection" class="sub-status">
+        <p><b>Pre Selected</b></p>
+
+        <!-- Committee Analysis -->
+        <div class="status-step" onclick="toggleStatus('committee-analysis')">
+          <span>Committee Analysis</span>
+          <i class="fa fa-chevron-down"></i>
+        </div>
+        <div id="committee-analysis" class="sub-status">
+            <ul class="committee-list">
+                <!-- Tech Group Committees -->
+                <li><b>Committees for Each Group:</b></li>
+                <ul>
+                    <li>Committee for Async</li>
+                    <li>Committee for AWS Brighton User Group</li>
+                    <li>Committee for Azure</li>
+                    <li>Committee for Breaking Breadboards</li>
+                    <li>Committee for Brighton AI</li>
+                    <li>Committee for Brighton Blockchain</li>
+                    <li>Committee for Brighton Cloud</li>
+                    <li>Committee for Brighton Data Forum</li>
+                    <li>Committee for Brighton R</li>
+                    <li>Committee for Green Software Brighton</li>
+                    <li>Committee for JavaScript Brighton</li>
+                    <li>Committee for Lean Agile Brighton</li>
+                    <li>Committee for People and Culture Club</li>
+                    <li>Committee for Product Unleashed</li>
+                    <li>Committee for Tech Jumpstart</li>
+                    <li>Committee for UXup Brighton</li>
+                </ul>
+
+                <!-- EonCanvas Committees -->
+                <li><b>EonCanvas Committees:</b></li>
+                <ul>
+                    <li>Innovation and Strategy Committee</li>
+                    <li>Marketing and Outreach Committee</li>
+                    <li>Technology and Operations Committee</li>
+                    <li>Finance and Risk Committee</li>
+                </ul>
+
+                <!-- Project Specific Committees -->
+                <li><b>Project Specific Committees:</b></li>
+                <ul>
+                    <li>Housing for All Project Committee</li>
+                    <li>Sustainable Energy Initiative Committee</li>
+                    <li>Tech for Creative Economy Committee</li>
+                </ul>
+            </ul>
+        </div>
+
+        <p>Approved for Business Case Development</p>
+        <p>Not Selected</p>
+    </div>
+
+    <!-- Business Case Development -->
+    <div class="status-step" onclick="toggleStatus('business-case')">
+      <span>4. Business Case Development</span>
+      <i class="fa fa-chevron-down"></i>
+    </div>
+    <div id="business-case" class="sub-status">
+        <p><b>Quick Wins</b></p>
+        <p>Business Case (BC) Development</p>
+        <p>BC Evaluation</p>
+        <p>BC Not Approved for Implementation</p>
+        <p>Business Case (BC) Approval and Review</p>
+    </div>
+
+    <!-- Project Implementation -->
+    <div class="status-step" onclick="toggleStatus('project-implementation')">
+      <span>5. Project Implementation</span>
+      <i class="fa fa-chevron-down"></i>
+    </div>
+    <div id="project-implementation" class="sub-status">
+        <p><b>Under Implementation</b></p>
+        <p>Not Implemented</p>
+        <p>Implemented</p>
+    </div>
+
+    <!-- Completion -->
+    <div class="status-step" onclick="toggleStatus('completion')">
+      <span>6. Completion</span>
+      <i class="fa fa-chevron-down"></i>
+    </div>
+    <div id="completion" class="sub-status">
+        <p><b>In Progress</b></p>
+        <p>Completed</p>
+        <p>Terminated Project</p>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-16 w3-light-grey">
+    <p class="animated-footer">Powered by EonCanvas Collaboration Platform</p>
+  </footer>
+
+</div>
+
+</body>
+</html>

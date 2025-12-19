@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Business Model Canvas</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+.canvas-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 10px;
+  padding: 20px;
+  background-color: white;
+}
+.canvas-section {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+</style>
+</head>
+<body class="w3-light-grey">
+
+<!-- Top container with EonCanvas Logo -->
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();">
+    <i class="fa fa-bars"></i>  Menu
+  </button>
+  <!-- EonCanvas Logo -->
+  <span class="w3-bar-item">
+    <img src="./Images/R.jpeg" alt="EonCanvas Logo" class="logo-img" style="max-width: 50px; vertical-align: middle; margin-right: 10px;">
+    EonCanvas Collaboration Platform
+  </span>
+</div>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container">
+    <h5>Dashboard</h5>
+  </div>
+  <div class="w3-bar-block">
+    <a href="dashboard.html" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-lightbulb-o fa-fw"></i>  New Ideas</a>
+    <a href="idea.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-handshake-o fa-fw"></i>  Collaborations</a>
+    <a href="stage.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-trophy fa-fw"></i>  Challenges</a>
+    <a href="profile.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw"></i>  Profile</a>
+    <a href="setting.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Settings</a>
+    <a href="wallet.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-money fa-fw"></i>  Prize Wallet</a><br><br>
+  </div>
+</nav>
+
+<!-- Main Page Content -->
+<div class="w3-main" style="margin-left:300px; margin-top:80px;">
+  <div class="w3-container w3-white w3-padding-large">
+    <h2>Your Business Model Canvas</h2>
+
+    <!-- Business Model Canvas Diagram -->
+    <div class="w3-container w3-margin-top">
+      <div class="canvas-container">
+        <div class="canvas-section">
+          <h4>Key Partners</h4>
+          <p>Local governments and city councils (Brighton); Financial institutions offering low-interest financing</p>
+        </div>
+        <div class="canvas-section">
+          <h4>Key Activities</h4>
+          <p>Partnering with local governments to secure subsidies and grants, Collaborating with financial institutions for flexible mortgage options</p>
+        </div>
+        <div class="canvas-section">
+          <h4>Key Resources</h4>
+          <p>Digital platform for managing sales and subscription services; Financial partners (banks, microfinance institutions)</p>
+        </div>
+        <div class="canvas-section">
+          <h4>Value Proposition</h4>
+          <p>Affordable, sustainable homes with flexible financing options.</p>
+        </div>
+        <div class="canvas-section">
+          <h4>Customer Segments</h4>
+          <p>Middle-income families, Low-income families</p>
+        </div>
+        <div class="canvas-section">
+          <h4>Channels</h4>
+          <p>Collaborations with local government agencies; Partnerships with community organizations</p>
+        </div>
+        <div class="canvas-section">
+          <h4>Cost Structure</h4>
+          <p>Marketing and community outreach; Operational costs for maintenance services</p>
+        </div>
+        <div class="canvas-section">
+          <h4>Revenue Streams</h4>
+          <p>Direct home sales, Subscription maintenance services</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-16 w3-light-grey w3-center">
+    <p class="animated-footer">Powered by EonCanvas Collaboration Platform</p>
+  </footer>
+</div>
+
+<!-- Script to Handle Sidebar Toggle -->
+<script>
+  // Get the Sidebar
+  var mySidebar = document.getElementById("mySidebar");
+
+  // Toggle between showing and hiding the sidebar, and add overlay effect
+  function w3_open() {
+      if (mySidebar.style.display === 'block') {
+          mySidebar.style.display = 'none';
+      } else {
+          mySidebar.style.display = 'block';
+      }
+  }
+
+  // Close the sidebar
+  function w3_close() {
+      mySidebar.style.display = "none";
+  }
+</script>
+
+</body>
+</html>

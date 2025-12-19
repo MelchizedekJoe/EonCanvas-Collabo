@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Terms and Conditions - EonCanvas Platform</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .section-content {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .expandable-section {
+            display: none;
+        }
+        .expand-btn {
+            cursor: pointer;
+            color: #007BFF;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="w3-light-grey">
+
+<!-- Page Content -->
+<div class="w3-main w3-padding-large">
+    <header class="w3-container">
+        <h1 class="section-title">Terms and Conditions</h1>
+        <p class="section-content">
+            Welcome to the EonCanvas Platform collaboration system. By using this platform, you agree to the terms below regarding intellectual property, data privacy, and collaborative project contributions.
+        </p>
+    </header>
+
+    <!-- Intellectual Property Section -->
+    <div class="w3-container">
+        <h2 class="section-title">Intellectual Property (IP) Ownership Terms</h2>
+        <p class="section-content">
+            The EonCanvas Platform enables open collaboration between multidisciplinary teams. Below are the terms regarding intellectual property, which ensure that contributors can share their ideas without losing ownership.
+        </p>
+
+        <p><span class="expand-btn" onclick="toggleSection('ipSection')">Read full IP Ownership Terms</span></p>
+
+        <div id="ipSection" class="expandable-section">
+            <h3>1. Overview</h3>
+            <p>The platform encourages participants to share ideas safely without giving up IP ownership, fostering an environment where ideas can be built upon to solve complex challenges.</p>
+
+            <h3>2. Ownership of Intellectual Property</h3>
+            <p><strong>2.1 Contributor-Owned IP</strong><br>
+            Contributors retain full ownership of pre-existing IP. Sharing or disclosing such IP on the platform does not transfer ownership unless otherwise agreed.</p>
+
+            <p><strong>2.2 Collaborative IP</strong><br>
+            For IP created through collaboration, ownership will be determined by contribution agreements between team members. Pre-existing IP remains with the original owner.</p>
+
+            <h3>3. Rights to Use Contributed IP</h3>
+            <p>By contributing IP, participants grant non-exclusive, royalty-free licenses for project purposes, limited to evaluation, testing, or development.</p>
+
+            <h3>4. Commercialization of IP</h3>
+            <p><strong>4.1 Contributor Commercialization</strong><br>
+            Contributors can independently commercialize their IP shared on the platform.</p>
+
+            <p><strong>4.2 EonCanvas Platform Commercialization</strong><br>
+            If EonCanvas Platform seeks to commercialize collaboratively created IP, explicit written consent from the original IP owner is required.</p>
+
+            <h3>5. Confidentiality and IP Protection</h3>
+            <p>Participants agree to keep confidential information private unless a specific Non-Disclosure Agreement (NDA) is in place.</p>
+
+            <h3>6. Dispute Resolution</h3>
+            <p>In case of disputes regarding IP ownership, parties must seek mediation first before arbitration under a recognized arbitration body.</p>
+
+            <!-- Additional IP Sections can be added here -->
+        </div>
+
+    </div>
+
+    <footer class="w3-container w3-padding-16 w3-light-grey">
+        <p class="animated-footer">Powered by EonCanvas Collaboration Platform</p>
+    </footer>
+</div>
+
+<script>
+// Function to toggle the IP section
+function toggleSection(sectionId) {
+    var section = document.getElementById(sectionId);
+    if (section.style.display === "block") {
+        section.style.display = "none";
+    } else {
+        section.style.display = "block";
+    }
+}
+</script>
+
+</body>
+</html>

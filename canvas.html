@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Business Model Canvas Creation</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+.logo-img {
+  max-width: 50px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+canvas-link-btn {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+canvas-link-btn:hover {
+    background-color: #45a049;
+}
+
+.canvas-summary {
+    font-size: 18px;
+    color: #333;
+    margin: 20px 0;
+}
+
+/* Add some padding around the body */
+body {
+    padding: 30px;
+}
+</style>
+</head>
+<body class="w3-light-grey">
+
+<!-- Top container with Eoncanvas Logo -->
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+  <!-- Eoncanvas Logo -->
+  <span class="w3-bar-item">
+    <img src="./Images/R.jpeg" alt="EonCanvas Logo" class="logo-img">
+    EonCanvas Collaboration Platform
+  </span>
+</div>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container">
+    <h5>Dashboard</h5>
+  </div>
+  <div class="w3-bar-block">
+    <a href="dashboard.html" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-lightbulb-o fa-fw"></i>  New Ideas</a>
+    <a href="idea.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-handshake-o fa-fw"></i>  Collaborations</a>
+    <a href="stage.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-trophy fa-fw"></i>  Challenges</a>
+    <a href="profile.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw"></i>  Profile</a>
+    <a href="setting.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Settings</a>
+    <a href="wallet.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-money fa-fw"></i>  Prize Wallet</a><br><br>
+  </div>
+</nav>
+
+<!-- Main Page Content -->
+<div class="w3-main" style="margin-left:300px; margin-top:80px;">
+  <div class="w3-container w3-white w3-padding-large">
+    <h2>Design Your Business Model Canvas</h2>
+    
+    <!-- Canvas Introduction -->
+    <div class="canvas-summary">
+        <p>You've successfully submitted your idea and provided all the necessary details! Now it's time to design your <b>Business Model Canvas</b> to visually represent how your business will operate, deliver value, and make an impact.</p>
+        <p>The Business Model Canvas will guide you through understanding your <b>Value Proposition, Customer Segments, Revenue Streams, Key Partners</b>, and more. Make sure to fill it out thoughtfully to strengthen your idea.</p>
+    </div>
+
+    <!-- Link to the Canvas Design Page -->
+    <div class="w3-center">
+        <a href="business-model-canvas.html" onclick="storeIdeaData();" class="canvas-link-btn">Go to Business Model Canvas</a>
+    </div>
+
+    <!-- Option to Review Previous Inputs -->
+    <div class="w3-container w3-margin-top">
+        <h4>Review Your Idea Submission</h4>
+        <p>If you need to review or modify the information you've already provided, you can do so below.</p>
+        
+        <ul class="w3-ul w3-card-4 w3-white">
+          <li class="w3-padding-16">
+            <span class="w3-large"><b>Idea Title:</b> <span id="ideaTitle">Affordable Housing Solutions</span></span><br>
+            <span><b>Description:</b> <span id="description">A plan to provide low-cost housing to underserved communities in urban areas.</span></span>
+          </li>
+          <li class="w3-padding-16">
+            <span class="w3-large"><b>Customer Segments:</b> <span id="customerSegments">Middle-income families, Low-income families</span></span><br>
+            <span><b>Value Proposition:</b> <span id="valueProposition">Affordable, sustainable homes with flexible financing options.</span></span>
+          </li>
+          <li class="w3-padding-16">
+            <span class="w3-large"><b>Revenue Streams:</b> <span id="revenueStreams">Direct home sales, Subscription maintenance services</span><br></span>
+          </li>
+        </ul>
+        
+        <div class="w3-center">
+          <a href="dashboard.html" class="w3-button w3-margin-top w3-red">Edit Submission</a>
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-16 w3-light-grey w3-center">
+  <p class="animated-footer">Powered by EonCanvas Collaboration Platform</p>
+</footer>
+
+
+</body>
+
+</html>

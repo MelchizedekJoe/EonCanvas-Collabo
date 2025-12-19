@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Idea Generation & Collaboration Dashboard</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+.logo-img {
+  max-width: 50px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+/* Slide-in animation for the footer */
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animated-footer {
+  display: inline-block;
+  animation: slideIn 3s ease-in-out forwards;
+  font-weight: bold;
+  color: #333;
+  font-size: 18px;
+}
+
+/* Style for Idea list */
+.ideas-container {
+  margin: 20px 0;
+}
+
+.idea-list {
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.idea-list th, .idea-list td {
+  padding: 15px;
+  text-align: left;
+}
+
+.idea-list th {
+  background-color: #007BFF;
+  color: white;
+}
+
+.idea-list td {
+  border-bottom: 1px solid #ddd;
+}
+
+.idea-list tr:hover {
+  background-color: #f1f1f1;
+}
+
+.icon {
+  color: green;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.idea-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #007BFF;
+}
+
+.since-date {
+  color: #555;
+}
+
+</style>
+</head>
+<body class="w3-light-grey">
+
+<!-- Top container with EonCanvas Logo -->
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+  <!-- EonCanvas Logo -->
+  <span class="w3-bar-item">
+    <img src="./Images/R.jpeg" alt="EonCanvas Logo" class="logo-img">
+    EonCanvas Collaboration Platform
+  </span>
+</div>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container">
+    <h5>Dashboard</h5>
+  </div>
+  <div class="w3-bar-block">
+    <a href="dashboard.html" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-lightbulb-o fa-fw"></i>  New Ideas</a>
+    <a href="idea.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-handshake-o fa-fw"></i>  Collaborations</a>
+    <a href="stage.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-trophy fa-fw"></i>  Challenges</a>
+    <a href="profile.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw"></i>  Profile</a>
+    <a href="setting.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Settings</a>
+    <a href="wallet.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-money fa-fw"></i>  Prize Wallet</a><br><br>
+  </div>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- PAGE CONTENT -->
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+
+  <!-- Header -->
+  <header class="w3-container" style="padding-top:22px">
+    <h5><b><i class="fa fa-dashboard"></i> Collaboration Dashboard</b></h5>
+  </header>
+
+  <!-- Ideas for Collaboration Section -->
+  <div class="w3-container w3-margin-top ideas-container">
+    <h5>Ideas for Collaboration - EonCanvas</h5>
+    <table class="idea-list">
+        <tr>
+            <th>Idea</th>
+            <th>Since</th>
+        </tr>
+        <tr>
+            <td><span class="icon">★</span><span class="idea-title">Boosting Local Tech Communities</span></td>
+            <td><span class="since-date">12 Aug 2023</span></td>
+        </tr>
+        <tr>
+            <td><span class="icon">★</span><span class="idea-title">Promoting Creative Talent in Brighton</span></td>
+            <td><span class="since-date">15 Aug 2023</span></td>
+        </tr>
+        <tr>
+            <td><span class="icon">★</span><span class="idea-title">Supporting Small-Scale Innovators</span></td>
+            <td><span class="since-date">18 Aug 2023</span></td>
+        </tr>
+        <tr>
+            <td><span class="icon">★</span><span class="idea-title">Encouraging Renewable Energy Startups</span></td>
+            <td><span class="since-date">20 Aug 2023</span></td>
+        </tr>
+        <tr>
+            <td><span class="icon">★</span><span class="idea-title">Fostering Cross-Industry Collaborations</span></td>
+            <td><span class="since-date">22 Aug 2023</span></td>
+        </tr>
+    </table>
+  </div>
+
+  <!-- Footer with animated text -->
+  <footer class="w3-container w3-padding-16 w3-light-grey">
+    <p class="animated-footer">Powered by EonCanvas Collaboration Platform</p>
+  </footer>
+
+  <!-- End page content -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+
+// Close the sidebar
+function w3_close() {
+  mySidebar.style.display = "none";
+}
+</script>
+
+</body>
+</html>
